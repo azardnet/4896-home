@@ -18,6 +18,32 @@
         main {
             width: 290px;
             height: 90px;
+            position: relative;
+            overflow: hidden;
+        }
+        main:before {
+            content: "";
+            width: 100%;
+            height: 1px;
+            background: #4698cc;
+            position: absolute;
+            transform: translate3d(327px, 20px, 0px);
+            animation-name: main;
+            animation-iteration-count: 1;
+            animation-duration: 1000ms;
+            animation-delay: 500ms;
+            animation-timing-function: ease-in-out;
+        }
+        @keyframes main {
+            0% {
+                transform: translate3d(327px, 20px, 0px);
+            }
+            50% {
+                transform: translate3d(-327px, 20px, 0px);
+            }
+            100% {
+                transform: translate3d(327px, 20px, 0px);
+            }
         }
         main svg {
             width: 100%;
@@ -25,6 +51,45 @@
         }
         main svg path {
             fill: #4698cc;
+        }
+        main svg path:nth-child(1) , main svg path:nth-child(2), main svg path:nth-child(3), main svg path:nth-child(4), main svg path:nth-child(5) {
+            animation-name: path1;
+            animation-iteration-count: 2;
+            animation-duration: 750ms;
+            animation-timing-function:cubic-bezier(0.755, 0.05, 0.855, 0.06);
+            transform: translate3d(0px, 0px, 0px);
+        }
+        @keyframes path1 {
+            0% {
+                transform: translate3d(0px, 0px, 0px);
+            }
+            12.5% {
+                transform: translate3d(5px, 5px, 0px);
+            }
+            25% {
+                transform: translate3d(-5px, -5px, 0px);
+            }
+            36% {
+                transform: translate3d(-5px, -5px, 0px);   
+            }
+            37.5% {
+                transform: translate3d(-5px, 5px, 0px);
+            }
+            50% {
+                transform: translate3d(5px, -5px, 0px);
+            }
+            62.5% {
+                transform: translate3d(-5px, 0px, 0px);
+            }
+            75% {
+                transform: translate3d(0px, 5px, 0px);
+            }
+            87.5% {
+                transform: translate3d(0px, -5px, 0px);
+            }
+            100% {
+                transform: translate3d(0px, 0px, 0px);
+            }
         }
     </style>
 </head>
